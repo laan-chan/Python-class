@@ -2,16 +2,14 @@ from tkinter import Tk, Label
 from PIL import Image, ImageTk
 
 root = Tk()
-root.configure(bg='lightgray')  # Add a background color
+root.configure(bg='lightgray') 
 
 try:
-    # Correct image path
-    image = Image.open("images/key_generation.png")  # Make sure this path is correct
+    image = Image.open("images/key_generation.png")  
     print("Image loaded successfully.")
-    image = image.resize((300, 300), Image.Resampling.LANCZOS)  # Resize with LANCZOS filter
+    image = image.resize((300, 300), Image.Resampling.LANCZOS) 
     photo = ImageTk.PhotoImage(image)
     
-    # Display image on a label
     label = Label(root, image=photo)
     label.image = photo  # Keep a reference
     label.pack()
